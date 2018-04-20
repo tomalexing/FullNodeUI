@@ -6,7 +6,7 @@ var path = require('path');
 // use:
 var profile = process.env.ENV ? process.env.ENV : 'local';
 
-fs.copySync(path.resolve(__dirname,'./app.config.ts.tpl'), path.resolve(__dirname,'../src/app/app.config.ts'));
+fs.copySync(path.resolve(__dirname,'./app.config.ts.tpl'), path.resolve(__dirname,'../../src/app/app.config.ts'));
 
 console.log('Applying profile: ' + profile);
 

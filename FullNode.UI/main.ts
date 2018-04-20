@@ -47,6 +47,7 @@ function createWindow() {
 
   if (serve) {
     require('electron-reload')(__dirname, {
+      electron: require(`${__dirname}/node_modules/electron`)});
     });
     mainWindow.loadURL('http://localhost:4200');
   } else {
@@ -60,19 +61,6 @@ function createWindow() {
   if (serve) {
     mainWindow.webContents.openDevTools();
   }
-
-  // Emitted when the window is going to close.
-  mainWindow.on('close', () => {
-  })
-
-  // Emitted when the window is closed.
-  mainWindow.on('closed', () => {
-    // Dereference the window object, usually you would store window
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null;
-  });
-
 };
 
 // This method will be called when Electron has finished
@@ -114,33 +102,19 @@ app.on('activate', () => {
 });
 
 function closeStratisApi() {
-  // if (process.platform !== 'darwin' && !serve) {
-    if (process.platform !== 'darwin' && !serve && !testnet) {
+  if (process.platform !== 'darwin' && !serve) {
     var http2 = require('http');
     const options1 = {
       hostname: 'localhost',
-      port: 37221,
+      port: apiPort,
       path: '/api/node/shutdown',
       method: 'POST'
     };
 
-   const req = http2.request(options1, (res) => {});
-   req.write('');
-   req.end();
-
-   } else if (process.platform !== 'darwin' && !serve && testnet) {
-     var http2 = require('http');
-     const options2 = {
-       hostname: 'localhost',
-       port: 38221,
-       path: '/api/node/shutdown',
-       method: 'POST'
-     };
-
-   const req = http2.request(options2, (res) => {});
-   req.write('');
-   req.end();
-   }
+    const req = http2.request(options1, (res) => {});
+    req.write('');
+    req.end();
+  }
 };
 
 function startStratisApi() {
