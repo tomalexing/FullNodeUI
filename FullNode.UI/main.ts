@@ -13,7 +13,7 @@ let apiPort;
 if (testnet) {
   apiPort = 38221;
 } else {
-  apiPort = 37221;
+  apiPort = 38222;
 }
 
 ipcMain.on('get-port', (event, arg) => {
@@ -120,7 +120,7 @@ function closeStratisApi() {
     var http2 = require('http');
     const options1 = {
       hostname: 'localhost',
-      port: 37221,
+      port: 38222,
       path: '/api/node/shutdown',
       method: 'POST'
     };
@@ -149,13 +149,13 @@ function startStratisApi() {
   const spawnStratis = require('child_process').spawn;
 
   //Start Stratis Daemon
-  let apiPath = path.resolve(__dirname, 'assets//daemon//Stratis.StratisD');
+  let apiPath = path.resolve(__dirname, 'assets//daemon//Impleum.ImpleumD');
   if (os.platform() === 'win32') {
-    apiPath = path.resolve(__dirname, '..\\..\\resources\\daemon\\Stratis.StratisD.exe');
+    apiPath = path.resolve(__dirname, '..\\..\\resources\\daemon\\Impleum.ImpleumD.exe');
   } else if(os.platform() === 'linux') {
-	  apiPath = path.resolve(__dirname, '..//..//resources//daemon//Stratis.StratisD');
+	  apiPath = path.resolve(__dirname, '..//..//resources//daemon//Impleum.ImpleumD');
   } else {
-	  apiPath = path.resolve(__dirname, '..//..//resources//daemon//Stratis.StratisD');
+	  apiPath = path.resolve(__dirname, '..//..//resources//daemon//Impleum.ImpleumD');
   }
 
   if (!testnet) {
