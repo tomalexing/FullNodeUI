@@ -42,7 +42,8 @@ function createWindow() {
     frame: true,
     minWidth: 1150,
     minHeight: 650,
-    title: "Stratis Core"
+    title: "Impleum Core",
+    icon: path.join(__dirname, 'assets/images/icon.png')
   });
 
   if (serve) {
@@ -196,7 +197,7 @@ function createTray() {
       }
     }
   ]);
-  systemTray.setToolTip('Stratis Core');
+  systemTray.setToolTip('Impleum Core');
   systemTray.setContextMenu(contextMenu);
   systemTray.on('click', function() {
     if (!mainWindow.isVisible()) {

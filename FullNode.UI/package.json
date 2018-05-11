@@ -1,17 +1,18 @@
 {
-  "name": "stratis-core",
-  "description": "Stratis Core Wallet",
+  "name": "impleum-core",
+  "description": "Impleum Core Wallet",
   "version": "0.2.0",
   "author": {
-    "name": "Stratis Group",
-    "email": "info@stratisplatform.com"
+    "name": "Impleum Group",
+    "email": "info@impleum.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/stratisproject/fullnodeui",
+  "homepage": "https://github.com/impleum/FullNodeUI",
   "keywords": [
     "fullnode",
     "ui",
     "stratis",
+    "impleum",
     "core",
     "bitcoin",
     "angular",
@@ -96,7 +97,7 @@
     "rxjs": "5.5.8",
     "ts-node": "5.0.1",
     "tslint": "5.9.1",
-    "typescript": "2.8.1",
+    "typescript": "^2.6.2",
     "wait-on": "2.1.0",
     "webdriver-manager": "12.0.6",
     "zone.js": "0.8.20"
