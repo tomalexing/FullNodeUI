@@ -11,7 +11,7 @@ testnet = args.some(val => val === "--testnet" || val === "-testnet");
 
 let apiPort;
 if (testnet) {
-  apiPort = 38221;
+  apiPort = 39222;
 } else {
   apiPort = 38222;
 }
@@ -133,7 +133,7 @@ function closeStratisApi() {
      var http2 = require('http');
      const options2 = {
        hostname: 'localhost',
-       port: 38221,
+       port: 39222,
        path: '/api/node/shutdown',
        method: 'POST'
      };
